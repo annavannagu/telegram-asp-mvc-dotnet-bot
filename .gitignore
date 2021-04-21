@@ -361,3 +361,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+
+out.json
+bucket-name.txt
+out.yml
+local.settings.json
+telegram-asp-mvc-dotnet-bot/Models/AppSettings.cs
