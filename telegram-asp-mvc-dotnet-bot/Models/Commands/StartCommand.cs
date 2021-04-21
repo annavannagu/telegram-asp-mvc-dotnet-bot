@@ -30,8 +30,10 @@ namespace TelegramAspMvcDotnetBot.Models.Commands
 
             bool isExist = ExistentUser.Check(tgId);
 
-            if (isExist)
+            if (!isExist)
+            {
                 LoginUser(LoggingServiceFactory.ServicesAvailable.New, tgId, firstname, lastname, username);
+            }   
                         
             string messageText = string.Format("Привет {0}!\nЖми /play для новой игры!", firstname);
             await botClient.SendTextMessageAsync(chatId, messageText, parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);

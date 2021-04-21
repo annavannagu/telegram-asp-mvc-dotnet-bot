@@ -16,7 +16,11 @@ namespace TelegramAspMvcDotnetBotDb.Controllers.Players
             var user = context.Players
                 .Where(m => m.TGId == tgId)
                 .FirstOrDefault();
-            return true;
+            
+            if (user != null)
+                return true;
+            
+            return false;
         }
     }
 }
