@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\telegram-asp-mvc-dotnet-bot-db\telegram-asp-mvc-dotnet-bot-db.csproj" />
+    <ProjectReference Include="..\telegram-asp-mvc-dotnet-bot-db\TelegramAspMvcDotnetBotDb.csproj" />
   </ItemGroup>
 
 </Project>

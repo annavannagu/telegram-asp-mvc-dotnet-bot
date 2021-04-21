@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "telegram-asp-mvc-dotnet-bot", "telegram-asp-mvc-dotnet-bot.csproj", "{BD9F31D3-5AD3-4DC8-AFB8-A31ED5C22C3F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramAspMvcDotnetBot", "TelegramAspMvcDotnetBot.csproj", "{BD9F31D3-5AD3-4DC8-AFB8-A31ED5C22C3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "telegram-asp-mvc-dotnet-bot-db", "..\telegram-asp-mvc-dotnet-bot-db\telegram-asp-mvc-dotnet-bot-db.csproj", "{F87A8340-6AB1-4077-993F-F7D7FB78313B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramAspMvcDotnetBotDb", "..\telegram-asp-mvc-dotnet-bot-db\TelegramAspMvcDotnetBotDb.csproj", "{F87A8340-6AB1-4077-993F-F7D7FB78313B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
