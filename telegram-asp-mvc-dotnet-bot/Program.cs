@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace telegram_asp_mvc_dotnet_bot
+namespace TelegramAspMvcDotnetBot
 {
     public class Program
     {

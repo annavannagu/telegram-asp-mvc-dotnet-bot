@@ -1,18 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using TelegramAspMvcDotnetBot.Models;
 
-namespace telegram_asp_mvc_dotnet_bot
+namespace TelegramAspMvcDotnetBot
 {
     public class Startup
     {
@@ -27,10 +21,13 @@ namespace telegram_asp_mvc_dotnet_bot
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services
+                .AddControllers()
+                .AddNewtonsoftJson();
+
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "telegram_asp_mvc_dotnet_bot", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TelegrammAspMvcDotNetCoreBot", Version = "v1" });
             });
         }
 
@@ -41,7 +38,7 @@ namespace telegram_asp_mvc_dotnet_bot
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "telegram_asp_mvc_dotnet_bot v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TelegrammAspMvcDotNetCoreBot v1"));
             }
 
             app.UseHttpsRedirection();
@@ -54,6 +51,9 @@ namespace telegram_asp_mvc_dotnet_bot
             {
                 endpoints.MapControllers();
             });
+
+            //Bot Configurations
+            Bot.GetBotClientAsync().Wait();
         }
     }
 }
