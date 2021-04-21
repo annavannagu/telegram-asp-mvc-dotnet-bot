@@ -5,7 +5,7 @@ using TelegramAspMvcDotnetBotDb.Controllers.Players;
 
 namespace TelegramAspMvcDotnetBotDb.Controllers.Players
 {
-    class LoggingServiceFactory
+    public class LoggingServiceFactory
     {
         public enum ServicesAvailable
         {
