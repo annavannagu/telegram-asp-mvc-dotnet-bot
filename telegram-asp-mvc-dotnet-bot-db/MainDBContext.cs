@@ -27,10 +27,10 @@ namespace TelegramAspMvcDotnetBotDb
                 .HasForeignKey(m => m.FlagID)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            ////builder.Entity<Package>()
-            ////    .HasOne(m => m.MyDestination)
-            ////    .WithMany(m => m.Packages)
-            ////    .HasForeignKey(m => m.DestinationId)
+            ////builder.Entity<Game>()
+            ////    .HasOne(m => m.Player)
+            ////    .WithMany(m => m.Game)
+            ////    .HasForeignKey(m => m.PlayerID)
             ////    .OnDelete(DeleteBehavior.Cascade);
 
             builder.Entity<Player>()

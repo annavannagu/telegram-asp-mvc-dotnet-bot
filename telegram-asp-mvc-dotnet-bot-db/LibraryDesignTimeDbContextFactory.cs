@@ -7,7 +7,7 @@ namespace TelegramAspMvcDotnetBotDb
         : IDesignTimeDbContextFactory<MainDbContext>
     {
         private const string  connectionString =
-            @"Server=.\SQLEXPRESS;Database=wwtravelclub;
+            @"Server=.\SQLEXPRESS;Database=telegrambot;
                 Trusted_Connection=True;MultipleActiveResultSets=true";
         public MainDbContext CreateDbContext(params string[] args)
         {
