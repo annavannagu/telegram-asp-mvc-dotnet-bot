@@ -39,7 +39,7 @@ namespace TelegramAspMvcDotnetBot.Models.Commands
             await botClient.SendTextMessageAsync(chatId, messageText, parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);
         }
 
-        public static void LoginUser(LoggingServiceFactory.ServicesAvailable servicesAvailable, int tgId, string firstname, string lastname, string username)
+        static void LoginUser(LoggingServiceFactory.ServicesAvailable servicesAvailable, int tgId, string firstname, string lastname, string username)
         {
             LoggingServiceFactory factory = new();
             var service = factory.Create(servicesAvailable);
