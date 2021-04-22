@@ -35,7 +35,7 @@ namespace TelegramAspMvcDotnetBot.Models.Commands
                 LoginUser(LoggingServiceFactory.ServicesAvailable.New, tgId, firstname, lastname, username);
             }   
                         
-            string messageText = string.Format("Привет {0}!\nЖми /play для новой игры!", firstname);
+            string messageText = string.Format("Привет {0} \U0000270C!\nЖми /play для новой игры!", firstname);
             await botClient.SendTextMessageAsync(chatId, messageText, parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);
         }
 

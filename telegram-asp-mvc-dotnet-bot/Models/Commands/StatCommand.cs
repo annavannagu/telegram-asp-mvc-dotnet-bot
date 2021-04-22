@@ -4,12 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
+using TelegramAspMvcDotnetBotDb.Controllers.Statistics;
 
 namespace TelegramAspMvcDotnetBot.Models.Commands
 {
-    public class HelpCommand: Command
+    public class StatCommand: Command
     {
-        public override string Name => @"/help";
+        public override string Name => @"/stat";
 
         public override bool Contains(Message message)
         {
@@ -22,7 +23,7 @@ namespace TelegramAspMvcDotnetBot.Models.Commands
         public override async Task Execute(Message message, TelegramBotClient botClient)
         {
             var chatId = message.Chat.Id;
-            string messageText = "\U0000270B Я умею загадывать новые флаги по команде /play\n\n\U0001F303 Показывать статистику по команде /stat";
+            string messageText = DBQueries.GetTop5();
             await botClient.SendTextMessageAsync(chatId, messageText, parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);
         }
     }
