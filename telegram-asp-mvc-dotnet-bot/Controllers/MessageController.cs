@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Telegram.Bot.Types;
 using TelegramAspMvcDotnetBot.Models;
+using TelegramAspMvcDotnetBot.Models.Commands;
 
 namespace TelegramAspMvcDotnetBot.Controllers
 {
@@ -42,6 +43,15 @@ namespace TelegramAspMvcDotnetBot.Controllers
                     }
                 }
             };
+
+            var callback_query = update.CallbackQuery;
+
+            if (callback_query != null)
+            {
+                AnswerCommand cmd = new();
+                await cmd.Execute(callback_query, botClient);
+            }
+
             return Ok();
         }
 

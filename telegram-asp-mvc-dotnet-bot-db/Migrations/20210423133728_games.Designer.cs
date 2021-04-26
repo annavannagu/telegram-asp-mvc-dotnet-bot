@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TelegramAspMvcDotnetBotDb;
 
 namespace telegram_asp_mvc_dotnet_bot_db.Migrations
 {
     [DbContext(typeof(MainDbContext))]
-    partial class MainDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210423133728_games")]
+    partial class games
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,7 +60,7 @@ namespace telegram_asp_mvc_dotnet_bot_db.Migrations
                     b.Property<int>("FlagID")
                         .HasColumnType("int");
 
-                    b.Property<bool?>("IsAnswered")
+                    b.Property<bool?>("IsAnswewred")
                         .HasColumnType("bit");
 
                     b.Property<int>("IsWin")

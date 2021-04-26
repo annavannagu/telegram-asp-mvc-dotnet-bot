@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.ReplyMarkups;
 using TelegramAspMvcDotnetBotDb.Controllers.Players;
 
 namespace TelegramAspMvcDotnetBot.Models.Commands
@@ -33,10 +34,23 @@ namespace TelegramAspMvcDotnetBot.Models.Commands
             if (!isExist)
             {
                 LoginUser(LoggingServiceFactory.ServicesAvailable.New, tgId, firstname, lastname, username);
-            }   
-                        
-            string messageText = string.Format("Привет {0} \U0000270C!\nЖми /play для новой игры!", firstname);
-            await botClient.SendTextMessageAsync(chatId, messageText, parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);
+            }
+
+            var replyKeyboardMarkup = new ReplyKeyboardMarkup(new []
+                {                    
+                    new []
+                    {
+                        new KeyboardButton(@"/play")
+                    }
+                });
+
+            string messageText = string.Format("Привет {0} \U0000270C!\nЖми \U00002B07 для новой игры!", firstname);
+            await botClient.SendTextMessageAsync(
+                chatId, 
+                messageText, 
+                parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown,
+                replyMarkup: replyKeyboardMarkup
+                );
         }
 
         static void LoginUser(LoggingServiceFactory.ServicesAvailable servicesAvailable, int tgId, string firstname, string lastname, string username)

@@ -14,5 +14,6 @@ namespace TelegramAspMvcDotnetBotDb.Models
         public Flag Flag { get; set; }
         public int FlagID { get; set; }
         public int IsWin { get; set; }
+        public bool? IsAnswered { get; set; }
     }
 }

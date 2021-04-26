@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Telegram.Bot;
+using Telegram.Bot.Args;
 using TelegramAspMvcDotnetBot.Models.Commands;
 
 namespace TelegramAspMvcDotnetBot.Models
@@ -12,7 +13,7 @@ namespace TelegramAspMvcDotnetBot.Models
         private static TelegramBotClient botClient;
         private static List<Command> commandsList;
 
-        public static IReadOnlyList<Command> Commands => commandsList.AsReadOnly();
+        public static IReadOnlyList<Command> Commands => commandsList.AsReadOnly();    
 
         public static async Task<TelegramBotClient> GetBotClientAsync()
         {
@@ -25,13 +26,17 @@ namespace TelegramAspMvcDotnetBot.Models
             commandsList.Add(new StartCommand());
             commandsList.Add(new HelpCommand());
             commandsList.Add(new StatCommand());
-            //TODO: Add more commands
-
-            botClient = new TelegramBotClient(AppSettings.Key);
-            string hook = string.Format(AppSettings.Url, "api/message/update");            
-            await botClient.SetWebhookAsync(hook);
+            commandsList.Add(new PlayCommand());
             
+            
+            botClient = new TelegramBotClient(AppSettings.Key);            
+
+            string hook = string.Format(AppSettings.Url, "api/message/update");            
+            await botClient.SetWebhookAsync(hook);            
+
+
             return botClient;
-        }
+        }        
+
     }
 }
